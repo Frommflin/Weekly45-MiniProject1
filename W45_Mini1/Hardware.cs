@@ -11,7 +11,7 @@ namespace W45_Mini1
         public string Type { get; set; } // Stationary Computer, Laptop, Phone etc.
         public string Brand { get; set; }  // Lenovo, Apple etc.
         public string Model { get; set; } // iPhone 10, S22 etc.
-        public int Price { get; set; } // In USD? Decide!!!!!
+        public int Price { get; set; } // In USD
         public DateTime DateOfPurchase { get; set; }
     }
 }
