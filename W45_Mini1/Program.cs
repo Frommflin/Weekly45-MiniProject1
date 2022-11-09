@@ -53,7 +53,7 @@ Methods.ShowAssets(assets);
 while (true)
 {
     // menu to add more assets to list
-    Console.WriteLine("Type 'A' to add more products or 'Q' to quit");
+    Console.WriteLine("Type 'A' to add more products, 'S' to show products or 'Q' to quit");
     input = Console.ReadLine();
     input.ToLower().Trim();
     if (input == "q")
@@ -74,6 +74,9 @@ while (true)
         {
             Console.WriteLine("Not a valid option");
         }
+    }
+    else if( input == "s")
+    {
         Methods.ShowAssets(assets);
     }
 }
