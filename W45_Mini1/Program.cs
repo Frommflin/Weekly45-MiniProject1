@@ -53,7 +53,9 @@ Methods.ShowAssets(assets);
 while (true)
 {
     // menu to add more assets to list
+    Console.ForegroundColor = ConsoleColor.DarkCyan;
     Console.WriteLine("Type 'A' to add more products, 'S' to show products or 'Q' to quit");
+    Console.ResetColor();
     input = Console.ReadLine();
     input.ToLower().Trim();
     if (input == "q")
@@ -62,8 +64,11 @@ while (true)
     }
     else if(input == "a")
     {
+        Console.ForegroundColor= ConsoleColor.Cyan;
         Console.WriteLine("What asset do you want to add?");
+        Console.ForegroundColor = ConsoleColor.DarkCyan;
         Console.Write("Type 'C' for computer, 'L' for laptop or 'P' for phone: ");
+        Console.ResetColor();
         input = Console.ReadLine();
         input.ToLower().Trim();
         if ((input == "c") || (input == "l") || (input == "p"))

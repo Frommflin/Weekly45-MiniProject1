@@ -19,8 +19,11 @@ namespace W45_Mini1
             Console.WriteLine();
 
             // Printing out sorted list to user
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Type".PadRight(20) + "Brand".PadRight(20) + "Model".PadRight(20) + "Price (USD)".PadRight(20) + "Date of purchase");
             Console.WriteLine("-----------------------------------------------------------------------------------------------------------------");
+            Console.ResetColor();
+
             foreach (Hardware hardware in orderedAssets)
             {
                 TimeSpan diff = hardware.DateOfPurchase - maxLifeTime;
@@ -146,6 +149,10 @@ namespace W45_Mini1
                     date = new DateTime(0001, 01, 01);
                 }
             } while (date == new DateTime(0001, 01, 01));
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Company {type.ToLower()} successfully added.");
+            Console.ResetColor();
 
             if (inputtype == "c")
             {
