@@ -186,7 +186,7 @@ namespace W45_Mini1
         */
         public static void ShowAssets(List<Hardware> assets)
         {
-            List<Hardware> orderedAssets = assets.OrderBy(h => h.Type).ThenBy(x => x.DateOfPurchase).ToList();
+            List<Hardware> orderedAssets = assets.OrderBy(h => h.Office.Country).ThenBy(x => x.DateOfPurchase).ToList();
             DateTime maxLifeTime = DateTime.Now.AddYears(-3);
 
             Console.WriteLine();

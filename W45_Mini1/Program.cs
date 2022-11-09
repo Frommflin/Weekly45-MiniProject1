@@ -97,8 +97,8 @@ while (true)
 */
 
 Office usa = new Office("USA", "USD", 1);
-Office sweden = new Office("Sweden", "SEK", 9.97);
-Office italy = new Office("Italy", "EUR", 1.03);
+Office sweden = new Office("Sweden", "SEK", 10.79);
+Office italy = new Office("Italy", "EUR", 0.99);
 
 Computer pc1 = new Computer("Computer", "Lenovo", "Ideacentre", 1530, new DateTime(2020, 03, 20), usa);
 Computer pc2 = new Computer("Computer", "Acer", "Aspire XC", 1550, new DateTime(2019, 12, 29), usa);
