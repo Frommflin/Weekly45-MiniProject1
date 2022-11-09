@@ -187,7 +187,7 @@ while (true)
         input.ToLower().Trim();
         if ((input == "c") || (input == "l") || (input == "p"))
         {
-            //assets.Add(Methods.AddAssets(input));
+            assets.Add(Methods.AddAssets(input, office));
         }
         else
         {
