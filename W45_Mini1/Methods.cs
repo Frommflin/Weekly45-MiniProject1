@@ -202,9 +202,13 @@ namespace W45_Mini1
             foreach (Hardware hardware in orderedAssets)
             {
                 TimeSpan diff = hardware.DateOfPurchase - maxLifeTime;
-                if (diff.Days < 90)  // Check if date of purchase is less than 3 months away from 3 years and make RED
+                if (diff.Days < 90)  // Check if date of purchase is less than 3 months away from 3 years, counting 1 month as 30 days
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
+                } 
+                else if(diff.Days < 180)  // Check if date of purchase is less than 6 months away from 3 years, counting 1 month as 30 days
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                 }
 
                 double localPrice = Math.Round(hardware.Price * hardware.Office.CurrencyValue, 2); // rounding local price to maximum 2 decimal places
