@@ -134,7 +134,7 @@ assets.Add(phone5);
 
 Methods.ShowAssets(assets);
 
-/*
+
 while (true)
 {
     // menu to add more assets to list
@@ -149,6 +149,35 @@ while (true)
     }
     else if (input == "a")
     {
+        Office office = null;
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("Choose what office you want to add asset to: ");
+        do
+        {
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write("Available offices: USA, Sweden, Italy: ");
+            Console.ResetColor();
+            input = Console.ReadLine();
+            input.ToLower().Trim();
+
+            if ((input == "u") || (input == "usa"))
+            {
+                office = usa;
+            }
+            else if ((input == "s") || (input == "sweden"))
+            {
+                office = sweden;
+            }
+            else if (input == "i" || (input == "italy"))
+            {
+                office = italy;
+            }
+            else
+            {
+                Console.WriteLine("There is no matching office, enter one of the listed offices please");
+            }
+        } while (office == null);
+        
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("What asset do you want to add?");
         Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -158,7 +187,7 @@ while (true)
         input.ToLower().Trim();
         if ((input == "c") || (input == "l") || (input == "p"))
         {
-            assets.Add(Methods.AddAssets(input));
+            //assets.Add(Methods.AddAssets(input));
         }
         else
         {
@@ -170,4 +199,3 @@ while (true)
         Methods.ShowAssets(assets);
     }
 }
-*/

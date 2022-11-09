@@ -218,137 +218,137 @@ namespace W45_Mini1
             Console.WriteLine();
         }
 
-        /*
-        public static Hardware AddAssets(string inputtype)
-        {
-            string input;
-            string type;
-            string brand;
-            string model;
-            int price;
-            DateTime date;
+        
+        //public static Hardware AddAssets(string inputtype)
+        //{
+        //    string input;
+        //    string type;
+        //    string brand;
+        //    string model;
+        //    int price;
+        //    DateTime date;
 
-            if (inputtype == "c")
-            {
-                type = "Computer";
-            }
-            else if (inputtype == "l")
-            {
-                type = "Laptop";
-            }
-            else
-            {
-                type = "Phone";
-            }
+        //    if (inputtype == "c")
+        //    {
+        //        type = "Computer";
+        //    }
+        //    else if (inputtype == "l")
+        //    {
+        //        type = "Laptop";
+        //    }
+        //    else
+        //    {
+        //        type = "Phone";
+        //    }
 
-            Console.WriteLine($"Follow instructions to add new company {type.ToLower()}.");
+        //    Console.WriteLine($"Follow instructions to add new company {type.ToLower()}.");
 
 
-            // do-while loops preventing string fields from being left empty
-            do
-            {
-                Console.Write("Brand: ");
-                input = Console.ReadLine();
-                input.Trim();
+        //    // do-while loops preventing string fields from being left empty
+        //    do
+        //    {
+        //        Console.Write("Brand: ");
+        //        input = Console.ReadLine();
+        //        input.Trim();
 
-                if (String.IsNullOrEmpty(input) || input == " ")
-                {
-                    Console.WriteLine("Brand cannot be left empty");
-                    brand = "";
-                }
-                else
-                {
-                    brand = input;
-                }
-            } while (brand == "");
+        //        if (String.IsNullOrEmpty(input) || input == " ")
+        //        {
+        //            Console.WriteLine("Brand cannot be left empty");
+        //            brand = "";
+        //        }
+        //        else
+        //        {
+        //            brand = input;
+        //        }
+        //    } while (brand == "");
 
-            do
-            {
-                Console.Write("Model: ");
-                input = Console.ReadLine();
-                input.Trim();
+        //    do
+        //    {
+        //        Console.Write("Model: ");
+        //        input = Console.ReadLine();
+        //        input.Trim();
 
-                if (String.IsNullOrEmpty(input) || input == " ")
-                {
-                    Console.WriteLine("Model cannot be left empty");
-                    model = "";
-                }
-                else
-                {
-                    model = input;
-                }
-            } while (model == "");
+        //        if (String.IsNullOrEmpty(input) || input == " ")
+        //        {
+        //            Console.WriteLine("Model cannot be left empty");
+        //            model = "";
+        //        }
+        //        else
+        //        {
+        //            model = input;
+        //        }
+        //    } while (model == "");
 
-            // do-while loop preventing price from being 0 or a non-integer
-            do
-            {
-                Console.Write("Price: ");
-                input = Console.ReadLine();
-                input.Trim();
+        //    // do-while loop preventing price from being 0 or a non-integer
+        //    do
+        //    {
+        //        Console.Write("Price: ");
+        //        input = Console.ReadLine();
+        //        input.Trim();
 
-                if (String.IsNullOrEmpty(input) || input == " ")
-                {
-                    Console.WriteLine("Field can't be left empty!");
-                    price = 0;
-                }
-                else if (int.TryParse(input, out int value))
-                {
-                    if (value == 0)
-                    {
-                        Console.WriteLine("Price cannot be 0!");
-                    }
-                    price = value;
-                }
-                else
-                {
-                    Console.WriteLine("Price has to be a number!");
-                    price = 0;
-                }
+        //        if (String.IsNullOrEmpty(input) || input == " ")
+        //        {
+        //            Console.WriteLine("Field can't be left empty!");
+        //            price = 0;
+        //        }
+        //        else if (int.TryParse(input, out int value))
+        //        {
+        //            if (value == 0)
+        //            {
+        //                Console.WriteLine("Price cannot be 0!");
+        //            }
+        //            price = value;
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Price has to be a number!");
+        //            price = 0;
+        //        }
 
-            } while (price == 0);
+        //    } while (price == 0);
 
-            // do-while loop preventing date of purchase from being a non-date
-            do
-            {
-                Console.Write("Date of purchase (yyyy-mm-dd): ");
-                input = Console.ReadLine();
-                input.Trim();
+        //    // do-while loop preventing date of purchase from being a non-date
+        //    do
+        //    {
+        //        Console.Write("Date of purchase (yyyy-mm-dd): ");
+        //        input = Console.ReadLine();
+        //        input.Trim();
 
-                if (String.IsNullOrEmpty(input) || input == " ")
-                {
-                    Console.WriteLine("Field can't be left empty!");
-                    date = new DateTime(0001, 01, 01);
-                }
-                else if (DateTime.TryParse(input, out DateTime purchased))
-                {
-                    date = purchased;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid date");
-                    date = new DateTime(0001, 01, 01);
-                }
-            } while (date == new DateTime(0001, 01, 01));
+        //        if (String.IsNullOrEmpty(input) || input == " ")
+        //        {
+        //            Console.WriteLine("Field can't be left empty!");
+        //            date = new DateTime(0001, 01, 01);
+        //        }
+        //        else if (DateTime.TryParse(input, out DateTime purchased))
+        //        {
+        //            date = purchased;
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine("Invalid date");
+        //            date = new DateTime(0001, 01, 01);
+        //        }
+        //    } while (date == new DateTime(0001, 01, 01));
 
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Company {type.ToLower()} successfully added.");
-            Console.ResetColor();
+        //    Console.ForegroundColor = ConsoleColor.Green;
+        //    Console.WriteLine($"Company {type.ToLower()} successfully added.");
+        //    Console.ResetColor();
 
-            if (inputtype == "c")
-            {
-                Computer asset = new Computer(type, brand, model, price, date);
-                return asset;
-            }
-            else if (inputtype == "l")
-            {
-                Laptop asset = new Laptop(type, brand, model, price, date);
-                return asset;
-            }
-            else
-            {
-                Phone asset = new Phone(type, brand, model, price, date);
-                return asset;
-            }
-        }*/
+        //    if (inputtype == "c")
+        //    {
+        //        Computer asset = new Computer(type, brand, model, price, date);
+        //        return asset;
+        //    }
+        //    else if (inputtype == "l")
+        //    {
+        //        Laptop asset = new Laptop(type, brand, model, price, date);
+        //        return asset;
+        //    }
+        //    else
+        //    {
+        //        Phone asset = new Phone(type, brand, model, price, date);
+        //        return asset;
+        //    }
+        //}
     }
 }
