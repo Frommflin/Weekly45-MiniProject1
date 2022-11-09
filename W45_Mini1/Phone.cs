@@ -8,6 +8,12 @@ namespace W45_Mini1
 {
     internal class Phone : Hardware
     {
+        /*  
+         *  --------------------------------------------
+         *  ---             Level 1-2                ---
+         *  --------------------------------------------
+        */
+        /*
         public Phone(string type, string brand, string model, int price, DateTime purchased)
         {
             Type = type;
@@ -15,6 +21,22 @@ namespace W45_Mini1
             Model = model;
             Price = price;
             DateOfPurchase = purchased;
+        }
+        */
+
+        /*  
+         *  --------------------------------------------
+         *  ---              Level 3                 ---
+         *  --------------------------------------------
+        */
+        public Phone(string type, string brand, string model, int price, DateTime purchased, Office office)
+        {
+            Type = type;
+            Brand = brand;
+            Model = model;
+            Price = price;
+            DateOfPurchase = purchased;
+            Office = office;
         }
     }
 }
