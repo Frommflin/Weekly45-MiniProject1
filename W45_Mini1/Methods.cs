@@ -13,6 +13,7 @@ namespace W45_Mini1
         public static void ShowAssets(List<Hardware> assets)
         {
             List<Hardware> orderedAssets = assets.OrderBy(h => h.Type).ThenBy(x => x.DateOfPurchase).ToList();
+            DateTime maxLifeTime = DateTime.Now.AddYears(-3);
 
             Console.WriteLine();
             Console.WriteLine();
@@ -22,7 +23,13 @@ namespace W45_Mini1
             Console.WriteLine("-----------------------------------------------------------------------------------------------------------------");
             foreach (Hardware hardware in orderedAssets)
             {
+                TimeSpan diff = hardware.DateOfPurchase - maxLifeTime;
+                if (diff.Days < 90)  // Check if date of purchase is less than 3 months away from 3 years and make RED
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
                 Console.WriteLine(hardware.Type.PadRight(20) + hardware.Brand.PadRight(20) + hardware.Model.PadRight(20) + hardware.Price.ToString().PadRight(20) + hardware.DateOfPurchase.ToString("yyyy-MM-dd"));
+                Console.ResetColor();
             }
 
             Console.WriteLine();
